@@ -4,6 +4,7 @@
   $con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to server");
   $query="select * from tb_admin where email='$em' or username='$em'";
   $data=mysqli_query($con,$query);
+  echo $em;
 ?>
 
 
@@ -46,7 +47,7 @@
       </select></td></tr>
     
       
-    <tr><td>Phone Number</td><td><input type="num" name="num"value=""><br></td></tr>
+    
 </table>   
      <input class="btn" type="submit" name="enter" value="Submit">
  

@@ -7,19 +7,20 @@
     $con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to server");
     $query="select * from tb_admin where email='$email'";
     $data=mysqli_query($con,$query);
-    echo $email;
-    echo "dsf";
+    
+    
+    //echo $email;
     if(mysqli_num_rows($data)>0)
     {
      $row = mysqli_fetch_assoc($data);
      echo "ds";
-     printf("error   : %s\n", mysqli_error($con));
+     printf("error  : %s\n", mysqli_error($con));
     } 
     else{
-        printf("error   : %s\n", mysqli_error($query));
+       echo "WELCOME  " .$email;
     }
     if ( false===$data ) {
-        printf("error   : %s\n", mysqli_error($con));
+        printf("error  v : %s\n", mysqli_error($con));
       }
 ?>
 <html>
@@ -33,15 +34,15 @@
         <ul>
             <li><a href="request.php">Submit req</a></li>
             <li><a href="requpdate.php">Update req</a></li>
-            <li><a href="logout.php">logout</a></li>
+            <li><a href="logout.php">Logout</a></li>
         </ul>
     </body>
     </html> 
     <?php 
-/*/session_start();
+//session_start();
 //$_SESSION['email']=$email;
-$con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to server");
-$query1="select topic amnt,category from tb_req ";
+//$con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to server");
+$query1='select topic amnt,category from tb_req where approval="YES"';
 $data1=mysqli_query($con,$query1);
 //echo $email;
 if(mysqli_num_rows($data1)>0)
@@ -61,6 +62,6 @@ else{
 }
 
 
-mysqli_close($con);*/
+mysqli_close($con);
 ?>
     

@@ -13,13 +13,8 @@ $_SESSION['email']=$email;
       
       $row = mysqli_fetch_assoc($data);
       $email=$row['email'];
-      {
-        header("Location:Userhome.php");
-     //  echo $email;
-      }
-      /*else{
-          echo "you're not verified";
-      } */ 
+      header("Location:Userhome.php");
+      //  echo $email;
     }
     else
     {
