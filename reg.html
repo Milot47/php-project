@@ -37,16 +37,16 @@
 <body>
 
    <h1>Register</h1>
-<form  class="f" method="POST" action="reg.php" onsubmit="return VALIDATION()"> 
+<form  class="f" method="POST" action="reg.php" name="reg" onsubmit="return VALIDATION()"> 
 <table  >
-   <tr><td>Username</td><td><input type="text" name="name"   value=""><br></td></tr>
-   <tr><td>Email</td><td><input type="email" name="mail" value="" id="mail"><br></td></tr> 
-   <tr><td>Phone number</td><td><input type="tel" name="num"  id="num"><br></td></tr> 
-   <tr><td>Password</td><td><input type="password" name="pswd" value="" id="num"><br></td></tr> 
-   <tr><td>Confirm Password</td><td><input type="password" name="pswd1" value=""><br></td></tr> 
+  <tr><td>Username</td>             <td><input type="text" name="name"   value="" id="name"><br></td></tr>
+  <tr><td>Email</td>                <td><input type="email" name="mail" value="" id="mail"><br></td></tr> 
+  <tr><td>Phone number</td>         <td><input type="tel" name="num"  id="num"><br></td></tr> 
+  <tr><td>Password</td>             <td><input type="password" name="pswd" value="" id="pswd"><br></td></tr> 
+  <tr><td>Confirm Password</td>     <td><input type="password" name="pswd1" value=""><br></td></tr> 
     
 </table>   
-     <input class="btn" type="submit" name="submit" value="Submit">
+  <input class="btn" type="submit" name="submit" value="Submit">
  
 </form>
 </div>

@@ -11,8 +11,8 @@ body{
     position:absolute;
     top:50%;
     left:50%;
+    background-color:white;
     transform:translate(-50%,-50%);
-    background-image:linear-gradient(white,white);*/
     text-align:center;
     opacity:95%;
 }
@@ -25,7 +25,8 @@ body{
 }
 
 
-.login-box input[type="text"],.login-box input[type="password"]{
+
+.login-box input[type="text"],.login-box input[type="password"],.login-box input[type="email"]{
     border:0;
     background:none;
     display:block;
@@ -33,36 +34,43 @@ body{
     text-align:center;
     font-size:15px;
     font-weight:500;
-    border:3px solid palegreen;
+    border:3px solid black;
     padding:14px 10px;
     width:200px;
     outline:none;
     color:black;
-    border-radius:24px;
+    border-radius:22px;
     transition:.5s;
 }
-.login-box input[type="text"]:hover,.login-box input[type="password"]:hover
-{
-   width:280px;
-   border-color:#2ecc71;
 
-}
-.login-box input[type="button"]{
+
+.login-box input[type="submit"]{
     border:0;
     background:none;
     display:block;
     margin:20px auto;
     text-align:center;
-    border:2px solid palegreen;
+    border:2px solid black;
     padding:14px 40px;
     cursor:pointer;
     outline:none;
     color:black;
     border-radius:24px;
     transition:.25s;
-}    
-.login-box input[type="button"]:hover{
+}   
+
+
+.login-box input[type="text"]:hover,.login-box input[type="password"]:hover,.login-box input[type="email"]:hover
+{
+   width:280px;
+   border-radius:2px;
+   border-color:grey;
+
+}
+
+
+.login-box input[type="submit"]:hover{
     color:white;
     background-image:linear-gradient(grey,black);
-    border-color:#2ecc71;
+    border-color:white;
 }

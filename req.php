@@ -1,19 +1,30 @@
 <?php
+session_start();
+$email = $_SESSION['email'];
+$_SESSION['email']=$email;
 $con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to server");
-$email=$_POST["mail"];
-$password=$_POST["pswd"];
-$name=$_POST["name"];
-$phone=$_POST["num"];
+$help=$_POST["help"];
+$Bank=$_POST["Bno"];
+$amt=$_POST["amt"];
+$category=$_POST["category"];
+$query="select * from tb_req ";
+$data=mysqli_query($con,$query);
+$row = mysqli_fetch_assoc($data);
+
+
+//$phno=$_POST["num"];
+//echo $email;
+
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
   }
 if($con)
 {
-     echo "dfs";
+  //echo $em;
 }
 
-$sql = "INSERT INTO tb_admin(username,email,phone,password) VALUES('$name','$email',$phone,'$password' )";
+$sql = "INSERT INTO tb_req (email,topic,amnt,category) VALUES('$email','$help','$amt','$category' )";
 if($sql){
     $s=1;
 }
@@ -28,7 +39,7 @@ if($result)
 if($result)
 {
     echo "<script> alert('data entered successfully')</script>";
-    echo "<script>location.href='login.html'</script>";
+    echo "<script>location.href='Userhome.php'</script>";
 }
  else
 {
