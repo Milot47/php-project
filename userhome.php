@@ -48,17 +48,17 @@ if(mysqli_num_rows($data1)>0)
     {
         $em= $row['reqid'];
        
-      {
+      
         ?>
         <a href="p.php?id=<?php echo $em; ?>"><?php echo $row['topic'];?></a>
        
         
         <?php
-      }
+      
     }  
 }
 else{
-    printf("error  : %s\n", mysqli_error($con));    
+    printf("error  no req: %s\n", mysqli_error($con));    
 }
 mysqli_close($con);
 ?>

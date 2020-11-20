@@ -35,13 +35,13 @@
     <body>
         <ul>
             <li><a href="logout.php">Logout</a></li>
-            <li><a href="logout.php">Logout</a></li>
+           
         </ul>
     </body>
     </html> 
     <?php 
 
-$query1='select topic amnt,category from tb_req where approval="NO"';
+$query1="select * from tb_req where approval='NO'";
 $data1=mysqli_query($con,$query1);
 //echo $email;
 if(mysqli_num_rows($data1)>0)
@@ -49,14 +49,15 @@ if(mysqli_num_rows($data1)>0)
     if(mysqli_num_rows($data1)>0)
     {
         while($row = mysqli_fetch_assoc($data1))
-        {?>
-           <a href="padmin.php"><?php echo $row['amnt'];?></a>
+        {$em= $row['reqid'];
+            ?>
+           <a href="padmin.php?id=<?php echo $em; ?>"><?php echo $row['topic'];?></a>
         <?php
         }
     }
 }
 else{
-    printf("error  : %s\n", mysqli_error($con));
+    printf("error  no data: %s\n", mysqli_error($con));
     
 }
 

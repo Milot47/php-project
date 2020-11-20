@@ -40,10 +40,10 @@
    <h1>Application Form</h1>
 <form  class="f" method="POST" action="req.php" name="req.php" onsubmit="return VALIDATION()"  enctype="multipart/form-data">
 <table  >
-    <tr><td>Help</td>                   <td><input type="text" name="help"value=""><br></td></tr>
-    <tr><td>Attach certificate</td>     <td><input type="file" name="cert"value=""><br></td></tr>
-    <tr><td>Bank account no</td>        <td><input type="num" name="Bno"value=""><br></td></tr> 
-    <tr><td>Amount</td>                 <td><input type="num" name="amt"value=""><br></td></tr>
+    <tr><td>Help</td>                   <td><input type="text" name="help"><br></td></tr>
+    <tr><td>Attach certificate</td>     <td><input type="file" name="fil" id="fil"><br></td></tr>
+    <tr><td>Bank account no</td>        <td><input type="num" name="Bno"><br></td></tr> 
+    <tr><td>Amount</td>                 <td><input type="num" name="amt"><br></td></tr>
     <tr><td><label for="category">Category:</label></td>
     <td><select name="category" id="category">
         <option value="Edu">Education</option>

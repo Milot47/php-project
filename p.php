@@ -32,7 +32,7 @@ if(mysqli_num_rows($data)>0)
         TOPIC   : <?php echo $row['topic'];?><br>
         CATEGORY: <?php echo $row['category'];?><br>
         AMOUNT  : <?php echo $row['amnt'];?><br>
-        AMOUNT  : <?php echo $row['email'];?><br>
+        CERTIFICATE:<img src="uploads/<?php echo $row['bno'];?>.png" width="500" height="500">
      </h4>
      <?php
     }
