@@ -9,5 +9,11 @@
         $qu=" update tb_req set approval='YES' where reqid='$id'";
         $dat=mysqli_query($con,$qu);
         echo " REQUEST APPROVED";
+       
     }
 ?>
+<html>
+<head>
+</head>
+ <a href="adminhome.php">HOME</a>
+ </html
