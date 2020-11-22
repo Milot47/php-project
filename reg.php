@@ -8,23 +8,15 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
   }
-if($con)
-{
-     echo "dfs";
-}
+
 
 $sql = "INSERT INTO tb_admin(username,email,phone,password) VALUES('$name','$email',$phone,'$password' )";
-if($sql){
-    $s=1;
-}
+
 $result = mysqli_query($con, $sql);
-if ( false===$result ) {
+/*if ( false===$result ) {
     printf("error: %s\n", mysqli_error($con));
-  }
-if($result)
-{
-     echo "dfs";
-}
+  }*/
+
 if($result)
 {
     echo "<script> alert('data entered successfully')</script>";

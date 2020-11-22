@@ -9,8 +9,8 @@ if(isset($_SESSION['email']))
 } 
 else
 {
-    //echo "<script>alert('logged out')</script>";
-    //echo "<script>location.href='login.html'</script>";
+    echo "<script>alert('logged out')</script>";
+    echo "<script>location.href='login.html'</script>";
 }
 
 ?>
