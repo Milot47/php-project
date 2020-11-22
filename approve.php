@@ -1,3 +1,11 @@
+<html>
+<head>
+<link rel="stylesheet" href="page.css" type="text/css">
+</head>
+ <ul>
+ <li><a href="adminhome.php">HOME</a><li>
+ </ul>
+ </html>
 <?php
     session_start();
     $email = $_SESSION['email'];
@@ -12,8 +20,3 @@
        
     }
 ?>
-<html>
-<head>
-</head>
- <a href="adminhome.php">HOME</a>
- </html

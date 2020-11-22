@@ -1,40 +1,47 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>REGISTER</title>
-<link rel="stylesheet" href="forms.css" type="text/css">
-</head>
-<script> function VALIDATION() 
+<link rel="stylesheet" href="form.css" type="text/css">
+
+<script> 
+function VALIDATION() 
   {
-     var email = document.forms["reg"]["mail"];
-     var phone = document.getElementById('num').value;
-     var password = document.getElementById('pswd').value;
-     if(email.value.indexOf("@",0)<0)
+     var phone = document.forms["reg"]["num"].value;
+     var pswd = document.forms["reg"]["pswd"].value;
+     var pswd1 = document.forms["reg"]["pswd1"].value;
+     var email = document.forms["reg"]["mail"].value;
+     //var phone = document.getElementById('num').value;
+     //var pswd = document.getElementById('pswd').value;
+     //var pswd1 = document.getElementById('pswd1').value;
+     if(email.indexOf("@",0)<0)
      {
-      // window.alert("Please enter a valid email address.");
-       email.focus();
+       window.alert("Please enter a valid email address.");
+       document.getElementById('email').focus();
        return false;
      } 
-     else if(email.value.indexOf(".",0)<0)
+     else if(email.indexOf(".",0)<0)
      {
-      // window.alert("Please enter a valid email address.");
-       email.focus();
+       window.alert("Please enter a valid email address.");
+       document.getElementById('email').focus();
        return false;
      }
-     else if(password.length<8)
-     {
-      // window.alert("Password must carry 8 characters!!");
-       document.getElementById('pass').focus();
-       return false;
-     }
+     
      else if(phone.length<10)
      {
-      // window.alert("please enter a valid phone number!!");
+       window.alert("please enter a valid phone number!!");
        document.getElementById('num').focus();
+       return false;
+     }
+     else if(pswd.length<8)
+     {
+       alert("Password must carry 8 characters!!");
+       document.getElementById('pswd').focus();
        return false;
      }
      else if(pswd!==pswd1)
      {
-      //  window.alert("Psswords dont match");
+        window.alert("Passwords dont match");
        document.getElementById('pswd1').focus();
        return false;
 
@@ -42,22 +49,25 @@
      else{
       return true;
      }
-  } </script>
+  } 
+</script>
+</head>
 <body>
 
    <h1>Register</h1>
-<form  class="f" onsubmit='return VALIDATION()' method="POST" action="reg.php" name="reg" > 
-<table  >
+<form  class="f" action="reg.php" name="reg"  onsubmit="return VALIDATION()"  method="POST" > 
+<table>
   <tr><td>Username</td>             <td><input type="text" name="name" required placeholder="Name" id="name"><br></td></tr>
   <tr><td>Email</td>                <td><input type="email" name="mail" required placeholder="Email id" id="mail"><br></td></tr> 
   <tr><td>Phone number</td>         <td><input type="tel" name="num" required placeholder="Phone no" id="num"><br></td></tr> 
   <tr><td>Password</td>             <td><input type="password" name="pswd" required placeholder="Password" id="pswd"><br></td></tr> 
   <tr><td>Confirm Password</td>     <td><input type="password" name="pswd1" required placeholder="Password" id="pswd1"><br></td></tr> 
-  <tr><td><input class="btn" type="reset"name="reset"value="Reset Data"></td><td><input class="btn" type="submit" name="submit" value="Submit"></td></tr>
+  <tr><td><input type="reset" class="btn" value="Reset Data"></td>
+      <td><input type="submit" class="btn" value="Submit"></td></tr>
 </table>   
   
  
 </form>
-</div>
+
 </body>
 </html>

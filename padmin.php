@@ -4,7 +4,18 @@
     <link rel="stylesheet" href="page1.css" type="text/css">
   
     </head>
-    
+<body>
+<ul>
+                <li><a href="userhome.php">Home</a></li>    </ul>
+    <script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
 <?php
 session_start();
 $email = $_SESSION['email'];
@@ -39,7 +50,13 @@ if(mysqli_num_rows($data)>0)
         <button name="Approved" type="submit" value="YES" id="Approved">APPROVE</button>
     </form>
 
-     </h4>
+     </h4><span style="cursor:pointer" onclick="openNav()">View Certificate</span>
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <div class="overlay-content">
+        <img  src="uploads/<?php echo $row['bno'];?>.png" style="width:568px;height:432px;" ><br></div>
+  </div>
+  </body>
 </html>     
 
 

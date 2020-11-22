@@ -21,9 +21,9 @@ if(isset($_SESSION['id'])){
     
      while($row = mysqli_fetch_assoc($data))
      {
-        $qu=" update tb_req set payments=payments + $pay where reqid='$id'";
-        $dat=mysqli_query($con,$qu);
-        echo ":)";
+        $qu=" update tb_req set payments=payments + $pay where reqid='$id '";
+        if($dat=mysqli_query($con,$qu))
+       {echo "sad";}
      }
      if ( false===$dat ) {
         printf("error  v : %s\n", mysqli_error($con));
