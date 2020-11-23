@@ -47,7 +47,7 @@ if ($uploadOk == 0) {
 
 
 
-$sql = "INSERT INTO tb_req (email,topic,amnt,category,bno) VALUES('$email','$help','$amt','$category','$Bank' )";
+$sql = "INSERT INTO tb_req (email,topic,amnt,category,bno,img) VALUES('$email','$help','$amt','$category','$Bank','$newname' )";
 if($sql){
     $s=1;
 }

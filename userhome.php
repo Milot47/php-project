@@ -4,7 +4,7 @@
     $con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to server");
     $query="select * from tb_admin where email='$email' or username='$email'";
     $data=mysqli_query($con,$query);
-    if(mysqli_num_rows($data)>0)
+    if(mysqli_num_rows($data)>0 && $email!="admin")
     {
      $row = mysqli_fetch_assoc($data);
      echo "WELCOME  " .$email;
@@ -16,7 +16,7 @@
     <html>
         <head>
         <title>student</title>
-        <link rel="stylesheet" href="page.css" type="text/css">
+        <link rel="stylesheet" href="style.css" type="text/css">
         </head>
         <body>
             <ul>

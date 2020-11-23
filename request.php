@@ -6,8 +6,8 @@
 </head>
 <body>
 
-<button style="color:black; text-align:left;background:white; border:white; cursor:pointer; " onclick="document.location='userhome.php'">
-  <i class="material-icons">	&#xe88a</i>
+<button  style="color:white; background:black; border:black; height:30px; cursor:pointer; " onclick="document.location='userhome.php'">
+  <i class="material-icons" >	&#xe88a; </i> 
 </button>
 
 
@@ -16,8 +16,8 @@
   $em=$_SESSION['email'];
   $_SESSION['email']=$em;
   $con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to server");
-  echo $em;
-  
+
+  /*<?php echo $em;?><br>*/
   $query1="select * from tb_req where email='$em' ";
   $data1=mysqli_query($con,$query1);
   if(mysqli_num_rows($data1)>0)
@@ -30,7 +30,11 @@
 
 
 
-   <h1>Application Form</h1>
+  
+  
+  
+  <h1 style="text-align:center;">
+   Application Form</h1><br>
 <form  class="f" method="POST" action="req.php" name="req.php" onsubmit="return VALIDATION()"  enctype="multipart/form-data">
 
 <table  >
