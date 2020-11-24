@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Application</title>
-<link rel="stylesheet" href="form.css" type="text/css">
+<link rel="stylesheet" href="style1.css" type="text/css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
@@ -33,9 +34,8 @@
   
   
   
-  <h1 style="text-align:center;">
-   Application Form</h1><br>
-<form  class="f" method="POST" action="req.php" name="req.php" onsubmit="return VALIDATION()"  enctype="multipart/form-data">
+ Application Form<br>
+<form  class="f" method="POST" action="req.php" name="req" onsubmit="return VALIDATION()"  enctype="multipart/form-data">
 
 <table  >
     <tr><td>Help</td>                   <td><input type="text" name="help"  required ><br></td></tr>
@@ -48,7 +48,7 @@
         <option value="Health">Health</option>
         <option value="Other">Other</option>
         <option value="Other">Other</option>
-      </select></td></tr>
+      </select></td></tr></b>
     
       
     
@@ -60,3 +60,12 @@
 
 </body>
 </html>
+<script> 
+function VALIDATION() 
+  {
+     var p = document.forms["req"]["Bno"].value;
+     
+      return true;
+     }
+  } 
+</script>

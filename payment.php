@@ -1,10 +1,18 @@
+<!DOCTYPE html>
 <html>
     <head>
     <title>payment</title>
-    <link rel="stylesheet" href="page1.css" type="text/css">
+    <link rel="stylesheet" href="style1.css" type="text/css">
   
     </head>
-    
+    <html>
+
+ <ul>
+ <li><a href="userhome.php" style=color:white; >HOME</a><li>
+ </ul>
+ </html>
+
+
 <?php
 session_start();
 $email = $_SESSION['email'];
@@ -23,7 +31,7 @@ if(isset($_SESSION['id'])){
      {
         $qu=" update tb_req set payments=payments + $pay where reqid='$id '";
         if($dat=mysqli_query($con,$qu))
-       {echo "sad";}
+       {echo "Payment Success";}
      }
      if ( false===$dat ) {
         printf("error  v : %s\n", mysqli_error($con));

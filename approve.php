@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="page.css" type="text/css">
+<link rel="stylesheet" href="style1.css" type="text/css">
 </head>
  <ul>
- <li><a href="adminhome.php">HOME</a><li>
+ <li><a href="adminhome.php" style=color:white; >HOME</a><li>
  </ul>
  </html>
 <?php

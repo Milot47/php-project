@@ -7,27 +7,48 @@
     if(mysqli_num_rows($data)>0 && $email!="admin")
     {
      $row = mysqli_fetch_assoc($data);
-     echo "WELCOME  " .$email;
+     
      $email = $row['email']; 
      $_SESSION['email']=$email;
 ?>
 
-
+<!DOCTYPE html>
     <html>
         <head>
         <title>student</title>
-        <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="stylesheet" href="style1.css" type="text/css">
         </head>
         <body>
-            <ul>
-                <li><a href="request.php">REQUEST</a></li>
-                <li><a href="delpr.php">Delete account</a></li>
-                <li><a href="logout.php">Logout</a></li>
-           
-            </ul>
+        <ul>
+            <li><div class="container" onclick="openNav(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+                </div></li>
+            <li> <?php echo "WELCOME  " .$email;?></li>
+        </ul>
+        
+        <div id="myNav" class="overlay" >
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(this)">&times;</a>
+            <div class="overlay-content">
+               <a href="request.php">Request</a>
+                <a href="settings.php">Settings</a>
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
         </body>
     </html> 
-
+    
+<script>
+function openNav(x) {
+  document.getElementById("myNav").style.width = "20%";
+  //x.classList.toggle("change");
+}
+function closeNav(x) {
+  document.getElementById("myNav").style.width = "0%";
+  
+}
+</script>
 
 <?php 
 $query1="select * from tb_req where approval='YES' AND email!='$email' ";

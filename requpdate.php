@@ -1,12 +1,16 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>student</title>
-  <link rel="stylesheet" href="page1.css" type="text/css">
+  <link rel="stylesheet" href="style1.css" type="text/css">
   <style>
   #myProgress {
     align:center;
     width:50%;
-    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
     background-color: grey;
   }
 
@@ -43,18 +47,31 @@
 
 
 <body>
-    <ul>
-     <li><a href="userhome.php">Home</a></li>
-     <li><a href="deletereq.php?id=<?php echo $row['email']; ?>">Remove Request</a></li>
-     <li><a href="logout.php">Logout</a></li>
-    </ul>
+<div class="container" onclick="openNav(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div><br>
+        <div id="myNav" class="overlay" >
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(this)">&times;</a>
+            <div class="overlay-content">
+               <a href="userhome.php">Home</a>
+               <a href="deletereq.php">Delete</a>
+                <a href="settings.php">Settings</a>
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
+      
+   
+    
 
-    <table >    
-        <tr><td><h3 >WELCOME <?php echo $row['email']; ?></h3></td></tr>
-        <tr><td>EMAIL :</td><td> <?php echo $row['email']; ?></td></tr><br>
-        <tr><td>TOPIC :</td><td> <?php echo $row['topic']; ?></td></tr><br>
-        <tr><td>AMOUNT : </td><td><?php echo $row['amnt']; ?></td></tr><br>
-        </table>
+
+     
+       WELCOME <?php echo $row['email']; ?><br>
+        
+        TOPIC : <?php echo $row['topic']; ?><br>
+        AMOUNT : <?php echo $row['amnt']; ?><br>
+        
 
 
 
@@ -76,4 +93,14 @@ else
 
 </body>       
     
-</html>    
+</html>  
+<script>
+function openNav(x) {
+  document.getElementById("myNav").style.width = "20%";
+  //x.classList.toggle("change");
+}
+function closeNav(x) {
+  document.getElementById("myNav").style.width = "0%";
+  
+}
+</script>  

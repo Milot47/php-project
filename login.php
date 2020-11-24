@@ -14,15 +14,15 @@ $_SESSION['email']=$email;
       if(($email=='admin')||($username=='admin'))
       { 
         $query="select * from tb_admin where email='admin'"; 
-        if($row['password']==$password) 
-        header("Location:adminhome.php");    
+        if($row['password']==$password) {
+        header("Location:adminhome.php?id='NO'");}    
       }
       else{
      
-      $email=$row['email'];
+      //$email=$row['email'];
      
       header("Location:userhome.php");
-      //echo $email;
+      
       }
     }
     else
