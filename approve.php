@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="style1.css" type="text/css">
+<link rel="stylesheet" href="page.css" type="text/css">
 </head>
  <ul>
- <li><a href="adminhome.php" style=color:white; >HOME</a><li>
+ <li><div class="container"><a href="adminhome.php" style=color:white; >HOME</a></div><li>
  </ul>
  </html>
 <?php
@@ -12,10 +12,10 @@
     $email = $_SESSION['email'];
     $id = $_SESSION['id'];
     $con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to server");
-    $approval=$_POST["Approved"];
-    if($approval=="YES")
+    $a=$_POST["Approved"];
+    if($a=="YES")
     {
-        $qu=" update tb_req set approval='YES' where reqid='$id'";
+        $qu=" update tb_req set approval='$a' where reqid='$id'";
         $dat=mysqli_query($con,$qu);
         echo " REQUEST APPROVED";
        

@@ -18,31 +18,42 @@
     <html>
         <head>
         <title>Admin</title>
-        <link rel="stylesheet" href="style1.css" type="text/css">
+        <link rel="stylesheet" href="page.css" type="text/css">
         </head>
         <body>
    
-  <ul>
+        <ul>
             <li><div class="container" onclick="openNav(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-                </div></li>
-            <li> <?php echo "WELCOME  " .$email;?></li>
-        </ul>
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div></li>
+            <li> <b><?php echo "WELCOME  " .$email;?><b></li>
+            <li><form  method="get" action="">
+                <select name="sort" onchange="this.form.submit()">
+                <option >Sort list</option>
+                    <option value="DONE">Completed</option>
+                    <option value="YES">Active</option>
+                    <option value="NO">Pending</option>
+                </select>
+                </form>
+        </li></ul>
         
         <div id="myNav" class="overlay" >
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav(this)">&times;</a>
             <div class="overlay-content">
-                
+            
                 <a href="logout.php">Logout</a>
             </div>
         </div>
+    
+
+
   </body>
     </html> 
-  <style>
-
-
+ 
+<style> 
+       
 </style>
 
 
@@ -60,7 +71,18 @@ function closeNav(x) {
 </script>
       
 <?php 
-$query1="select * from tb_req where approval='NO'";
+
+
+if (!isset($_GET['sort']))
+{
+    
+    $sort='NO';
+}
+else{
+    $sort = $_GET['sort'];
+  
+}  
+$query1="select * from tb_req where approval='$sort' ";
 $data1=mysqli_query($con,$query1);
 if(mysqli_num_rows($data1)>0)
 {
@@ -68,14 +90,14 @@ if(mysqli_num_rows($data1)>0)
     {
         while($row = mysqli_fetch_assoc($data1))
         {$em= $row['reqid'];
-            ?>
+            ?><br>
            <a href="padmin.php?id=<?php echo $em; ?>"><?php echo $row['topic'];?></a>
         <?php
         }
     }
 }
 else{
-    printf("error  no data: %s\n", mysqli_error($con));
+    echo "NO DATA";
 }
 } 
 else{

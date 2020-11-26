@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>student</title>
-  <link rel="stylesheet" href="style1.css" type="text/css">
+  <link rel="stylesheet" href="page.css" type="text/css">
   <style>
   #myProgress {
     align:center;
@@ -10,7 +10,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+  
     background-color: grey;
   }
 
@@ -21,7 +21,7 @@
     text-align: center;
     line-height: 30px;
     color: white;
-    border-radius:2px;
+  
   }
 
   </style>

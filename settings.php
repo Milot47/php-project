@@ -16,7 +16,7 @@
     <html>
         <head>
         <title>student</title>
-        <link rel="stylesheet" href="style1.css" type="text/css">
+        <link rel="stylesheet" href="page.css" type="text/css">
         </head>
         <body>
        

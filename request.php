@@ -2,16 +2,37 @@
 <html>
 <head>
 <title>Application</title>
-<link rel="stylesheet" href="style1.css" type="text/css">
+<link rel="stylesheet" href="form.css" type="text/css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
 
-<button  style="color:white; background:black; border:black; height:30px; cursor:pointer; " onclick="document.location='userhome.php'">
+<button   onclick="document.location='userhome.php'">
   <i class="material-icons" >	&#xe88a; </i> 
 </button>
 
+<style>
+button{
+  color:white; 
+  background:black; 
+  border:black; 
+  height:30px; 
+  cursor:pointer;
 
+}select { 
+  position:relative;
+  font-size: 20px;
+
+
+  border:6px black;   
+  cursor:pointer;
+  font-family:"Comic Sans MS", cursive, sans-serif;
+ 
+}
+
+
+
+</style>
 <?php
   session_start();
   $em=$_SESSION['email'];
@@ -34,7 +55,7 @@
   
   
   
- Application Form<br>
+ <h1>Application Form</h1><br>
 <form  class="f" method="POST" action="req.php" name="req" onsubmit="return VALIDATION()"  enctype="multipart/form-data">
 
 <table  >

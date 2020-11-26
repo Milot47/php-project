@@ -2,13 +2,13 @@
 <html>
     <head>
     <title>payment</title>
-    <link rel="stylesheet" href="style1.css" type="text/css">
-  
+    <link rel="stylesheet" href="page.css" type="text/css">
+   
     </head>
     <html>
 
  <ul>
- <li><a href="userhome.php" style=color:white; >HOME</a><li>
+ <li><div class="container"><a href="userhome.php" style=color:white; >HOME</a></div><li>
  </ul>
  </html>
 

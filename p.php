@@ -2,13 +2,13 @@
 <html>
     <head>
     <title>Userp</title>
-    <link rel="stylesheet" href="style1.css" type="text/css">
+    <link rel="stylesheet" href="page.css" type="text/css">
     
     </head>
    <style>
     #myProgress {
     align:center;
-    width:100%;
+    width:50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -73,29 +73,27 @@ if(isset($_GET['id']))
         </div>
    
        
-      <form class="f"action="payment.php" method="post">
-      <table>
-      <tr><td>TOPIC   :</td>     <td> <?php echo $row['topic'];?><br></td></tr>
-      <tr><td>CATEGORY: </td>  <td><?php echo $row['category'];?><br></td></tr>
-      <tr><td>AMOUNT  :</td>   <td> <?php echo $row['amnt'];?><br></td></tr>
      
-      
-      <tr><td>  <input type="tel" name="pay" placeholder="Enter amount " id="pay"></td>   <td> <input type="submit" class="btn" value="PAY"></td></tr>
-      
-      
-        </table>
-        <div id="myProgress">
-  <div id="myBar"style="width:<?php echo $per ."%"; ?>"><?php echo $per ."%"; ?></div>
-</div>
-
-
-        <span style="cursor:pointer" onclick="openImg()">View Certificate</span></form>
+    TOPIC   :</td>     <td> <?php echo $row['topic'];?><br>
+    CATEGORY: </td>  <td><?php echo $row['category'];?><br>
+    AMOUNT  :</td>   <td> <?php echo $row['amnt'];?><br>
+  <span style="cursor:pointer" onclick="openImg()">View Certificate</span></form><br>
+  <form class="f"action="payment.php" method="post">
+  <input type="tel" name="pay" placeholder="Enter amount " id="pay"></td>   <td> <input type="submit" class="btn" value="PAY">
+ <form>
+ 
   <div id="myImg" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeImg()">&times;</a>
       <div class="overlay-content">
-        <img  src="<?php echo $row['img'];?>" style="width:568px;height:432px;" ><br></div>
+        <img  src="<?php echo $row['img'];?>" ><br></div>
   </div>
-  
+
+    <div id="myProgress">
+  <div id="myBar"style="width:<?php echo $per ."%" ; ?>"><?php echo $per ."% completed"; ?></div>
+</div>
+
+
+        
   </body>
 </html>     
 <?php

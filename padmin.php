@@ -8,13 +8,13 @@ $con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to 
 <html>
     <head>
     <title>Adminp</title>
-    <link rel="stylesheet" href="style1.css" type="text/css">
+    <link rel="stylesheet" href="page.css" type="text/css">
   
     </head>
 <body>
 
  
-  <ul>
+        <ul>
             <li><div class="container" onclick="openNav(this)">
             <div class="bar1"></div>
             <div class="bar2"></div>
@@ -77,24 +77,31 @@ if(mysqli_num_rows($data)>0)
 
      
  
-  <form action="approve.php" method="post">
+ 
         TOPIC   : <?php echo $row['topic'];?><br>
         CATEGORY: <?php echo $row['category'];?><br>
         AMOUNT  : <?php echo $row['amnt'];?><br>
-        <?php echo $row['img'];?>
-        <button name="Approved" type="submit" value="YES" id="Approved">APPROVE</button>
-    </form>
-    <span style="cursor:pointer" onclick="openImg()"><img  src="uploads/<?php echo $row['img'];?>" style="width:500px;height:400px;" ><br></span>
+        
+       
+  
+    <span style="cursor:pointer" onclick="openImg()">View Certificate<br></span>
     <div id="myImg" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeImg()">&times;</a>
       <div class="overlay-content">
-        <img  src="<?php echo $row['img'];?>" style="width:568px;height:432px;" ><br></div>
-  </div></body>
+        <img  src="<?php echo $row['img'];?>"  ><br></div>
+  </div>
+
+  <?php
+  if($row['approval']=="NO"){?> 
+  <form action="approve.php" method="post">
+    <button name="Approved" type="submit" value="YES" id="Approved">APPROVE</button></body>
+
+  </form>
 </html>     
 
 
 <?php
-    }
+    }}
     
 }
 mysqli_close($con);
