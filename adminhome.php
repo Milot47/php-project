@@ -23,24 +23,24 @@
         <body>
    
         <ul>
-            <li><div class="container" onclick="openNav(this)">
+            <li><div class="container" onclick="openNav()">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div></li>
-            <li> <b><?php echo "WELCOME  " .$email;?><b></li>
+            <li> <?php echo $email;?></li>
             <li><form  method="get" action="">
-                <select name="sort" onchange="this.form.submit()">
-                <option >Sort list</option>
-                    <option value="DONE">Completed</option>
-                    <option value="YES">Active</option>
-                    <option value="NO">Pending</option>
+                <select name="sort" onchange="form.submit()">
+                <option >Sort list..</option>
+                    <option value="Active">Active</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Rejected">Rejected</option>
                 </select>
                 </form>
         </li></ul>
         
         <div id="myNav" class="overlay" >
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav(this)">&times;</a>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="overlay-content">
             
                 <a href="logout.php">Logout</a>
@@ -48,27 +48,15 @@
         </div>
     
 
-
-  </body>
-    </html> 
- 
-<style> 
-       
-</style>
-
-
-
-<script>
-
-function openNav(x) {
-  document.getElementById("myNav").style.width = "20%";
-  //x.classList.toggle("change");
-}
-function closeNav(x) {
-  document.getElementById("myNav").style.width = "0%";
+    </body>
+</html> 
   
-}
-</script>
+ 
+
+
+
+
+
       
 <?php 
 
@@ -76,12 +64,14 @@ function closeNav(x) {
 if (!isset($_GET['sort']))
 {
     
-    $sort='NO';
+    $sort='Pending';
 }
 else{
     $sort = $_GET['sort'];
   
 }  
+echo $sort .":<br>";
+
 $query1="select * from tb_req where approval='$sort' ";
 $data1=mysqli_query($con,$query1);
 if(mysqli_num_rows($data1)>0)
@@ -90,8 +80,8 @@ if(mysqli_num_rows($data1)>0)
     {
         while($row = mysqli_fetch_assoc($data1))
         {$em= $row['reqid'];
-            ?><br>
-           <a href="padmin.php?id=<?php echo $em; ?>"><?php echo $row['topic'];?></a>
+            ?>
+           <p><a href="padmin.php?id=<?php echo $em; ?>"><?php echo $row['topic'];?></p></a>
         <?php
         }
     }
@@ -109,4 +99,17 @@ if ( false===$data ) {
 
 mysqli_close($con);
 ?>
-    
+
+
+
+<script>
+
+function openNav() {
+  document.getElementById("myNav").style.width = "20%";
+ 
+}
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+  
+}
+</script>

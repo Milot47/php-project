@@ -1,30 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>student</title>
+  <title>Request</title>
   <link rel="stylesheet" href="page.css" type="text/css">
-  <style>
-  #myProgress {
-    align:center;
-    width:50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
   
-    background-color: grey;
-  }
-
-  #myBar {
-    text-align:center;
-    height: 30px;
-    background-color:skyblue;
-    text-align: center;
-    line-height: 30px;
-    color: white;
   
-  }
-
-  </style>
 </head>
 
 
@@ -39,24 +19,27 @@
     {
      $row = mysqli_fetch_assoc($data);
      
-     $per=round((( $row['payments']/$row['amnt'])*100),0);
-     $p=$per/2;
+    // $per=round((( $row['payments']/$row['amnt'])*100),0);
+    // $p=$per/2;
      
 ?> 
 
 
 
 <body>
-<div class="container" onclick="openNav(this)">
+<ul>
+            <li><div class="container" onclick="openNav(this)">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
-        </div><br>
+                </div></li>
+            <li> <b><?php echo "PROJECT SEVA"?></b></li><li> <?php echo $em;?></li>
+        </ul>
         <div id="myNav" class="overlay" >
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav(this)">&times;</a>
             <div class="overlay-content">
                <a href="userhome.php">Home</a>
-               <a href="deletereq.php">Delete</a>
+               
                 <a href="settings.php">Settings</a>
                 <a href="logout.php">Logout</a>
             </div>
@@ -67,17 +50,17 @@
 
 
      
-       WELCOME <?php echo $row['email']; ?><br>
+      
+        STATUS: <?php echo $row['approval']; ?><br>
+        TOPIC : <?php echo $row['topic']; ?><br>   
+        DESCRIPTION : <?php echo $row['details']; ?><br>       
+        CATEGORY: <?php echo $row['category']; ?><br>        
+        AMOUNT REQUIRED : <?php echo $row['amnt']; ?><br>
         
-        TOPIC : <?php echo $row['topic']; ?><br>
-        AMOUNT : <?php echo $row['amnt']; ?><br>
-        
 
 
 
-<div id="myProgress">
-  <div id="myBar"style="width:<?php echo $p ."%"; ?>"><?php echo $per ."%"; ?></div>
-</div>
+
 
 
 <?php
@@ -97,7 +80,7 @@ else
 <script>
 function openNav(x) {
   document.getElementById("myNav").style.width = "20%";
-  //x.classList.toggle("change");
+ 
 }
 function closeNav(x) {
   document.getElementById("myNav").style.width = "0%";

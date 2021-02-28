@@ -19,8 +19,8 @@ $con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to 
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
-                </div></li>
-            <li> <?php echo "WELCOME  " .$email;?></li>
+                </div></li><li> <b><?php echo "PROJECT SEVA"?></b></li>
+            <li> <?php echo $email;?></li>
         </ul>
         
         <div id="myNav" class="overlay" >
@@ -28,6 +28,7 @@ $con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to 
             <div class="overlay-content">
                
                 <a href="adminhome.php">Home</a>
+                <a href="logout.php">Logout</a>
             </div>
         </div>
   
@@ -43,7 +44,7 @@ function closeImg() {
 }
 function openNav() {
   document.getElementById("myNav").style.width = "20%";
-  //x.classList.toggle("change");
+  
 }
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
@@ -77,25 +78,28 @@ if(mysqli_num_rows($data)>0)
 
      
  
- 
-        TOPIC   : <?php echo $row['topic'];?><br>
-        CATEGORY: <?php echo $row['category'];?><br>
-        AMOUNT  : <?php echo $row['amnt'];?><br>
-        
+       <h4> STATUS  : <?php echo $row['approval'];?><br></h4><form action="approve.php" method="post">
        
+ EMAIL               :<?php echo $row['email'];?><br>
+   TOPIC         :  <?php echo $row['topic'];?><br>
+ DESCRIPTION :  <?php echo $row['details']; ?><br>
+  CATEGORY       :  <?php echo $row['category'];?><br>
+    AMOUNT REQUIRED : <?php echo $row['amnt'];?><br>
   
+       
+    
     <span style="cursor:pointer" onclick="openImg()">View Certificate<br></span>
     <div id="myImg" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeImg()">&times;</a>
       <div class="overlay-content">
         <img  src="<?php echo $row['img'];?>"  ><br></div>
   </div>
-
+  
   <?php
-  if($row['approval']=="NO"){?> 
-  <form action="approve.php" method="post">
-    <button name="Approved" type="submit" value="YES" id="Approved">APPROVE</button></body>
-
+  if($row['approval']=="Pending"){?> 
+  
+   <button name="Approved" type="submit" value="Active" id="Approved">APPROVE</button></body>
+   <button name="Approved" type="submit" value="Rejected" id="Approved">REJECT</button></body>
   </form>
 </html>     
 

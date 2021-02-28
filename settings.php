@@ -15,21 +15,22 @@
 <!DOCTYPE html>
     <html>
         <head>
-        <title>student</title>
+        <title>Settings</title>
         <link rel="stylesheet" href="page.css" type="text/css">
         </head>
         <body>
        
         <div class="overlay">
-
+        <a href="userhome.php">Home</a>
             <div class="overlay-content">
+
                <a href="deletereq.php">Delete Request</a>
                 <a href="delpr.php">Delete Account</a>
                 <a href="logout.php">Logout</a>
             </div>
         </div>
         </body>
-    </html> 
+
     <style>
     .overlay{
   display: inline-block;
@@ -39,6 +40,7 @@
   
 }
     </style>
+    </html>     
     <?php
 }
 else

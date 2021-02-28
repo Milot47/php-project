@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Application</title>
-<link rel="stylesheet" href="form.css" type="text/css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>Request</title>
+<link rel="stylesheet" href="f3.css" type="text/css">
+
 </head>
 <body>
 
-<button   onclick="document.location='userhome.php'">
-  <i class="material-icons" >	&#xe88a; </i> 
-</button>
+
 
 <style>
-button{
-  color:white; 
-  background:black; 
-  border:black; 
-  height:30px; 
-  cursor:pointer;
-
-}select { 
-  position:relative;
-  font-size: 20px;
-
-
-  border:6px black;   
-  cursor:pointer;
-  font-family:"Comic Sans MS", cursive, sans-serif;
- 
+body{
+  background-image:none;
+ background-color:#333;}
+a{
+    border:10px ;   
+    background:none;
+    display:block;
+    margin:8px auto;
+    text-align:left;
+    font-size:35px;
+    font-weight:500;
+    width:100%;
+    outline:none;
+    color:white;
 }
 
-
-
+.f{
+    width:700px;
+}
 </style>
 <?php
   session_start();
@@ -39,7 +36,7 @@ button{
   $_SESSION['email']=$em;
   $con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to server");
 
-  /*<?php echo $em;?><br>*/
+
   $query1="select * from tb_req where email='$em' ";
   $data1=mysqli_query($con,$query1);
   if(mysqli_num_rows($data1)>0)
@@ -53,23 +50,25 @@ button{
 
 
   
-  
-  
- <h1>Application Form</h1><br>
-<form  class="f" method="POST" action="req.php" name="req" onsubmit="return VALIDATION()"  enctype="multipart/form-data">
+<a href="userhome.php"><b>Home</b></a>
 
+ 
+<form  class="f" method="POST" action="req.php" name="req" onsubmit="return VALIDATION()"  enctype="multipart/form-data">
+<h3>Request </h3>
 <table  >
-    <tr><td>Help</td>                   <td><input type="text" name="help"  required ><br></td></tr>
-    <tr><td>Attach certificate</td>     <td><input type="file" name="fil"  required  id="fil"><br></td></tr>
-    <tr><td>Bank account no</td>        <td><input type="num" name="Bno"  required ><br></td></tr> 
-    <tr><td>Amount</td>                 <td><input type="num" name="amt"  required ><br></td></tr>
-    <tr><td><label for="category">Category:</label></td>
+    <tr><td><p>Topic</p></td>                   <td><input type="text" name="help"  required ></td></tr>
+    <tr><td><p>Description</p></td>                   <td><textarea  name="desc" id="desc" required rows="2" cols="50" ></textarea></td></tr>
+    <tr><td><p>Attach certificate</p></td>     <td><input type="file" name="fil"  required  id="fil"></td></tr>
+
+    <tr><td><p>UPI id</p></td>        <td><input type="num" name="Bno"  required ></td></tr> 
+    <tr><td><p>Amount</p></td>                 <td><input type="num" name="amt"  required ></td></tr>
+    <tr><td><p><label for="category">Category:</label></p></td>
     <td><select name="category" id="category">
         <option value="Edu">Education</option>
         <option value="Health">Health</option>
         <option value="Other">Other</option>
         <option value="Other">Other</option>
-      </select></td></tr></b>
+      </select></td></tr>
     
       
     

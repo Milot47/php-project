@@ -13,11 +13,13 @@
     $id = $_SESSION['id'];
     $con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to server");
     $a=$_POST["Approved"];
-    if($a=="YES")
+    $qu=" update tb_req set approval='$a' where reqid='$id'";
+    $dat=mysqli_query($con,$qu);
+    if($a=="Active")
     {
-        $qu=" update tb_req set approval='$a' where reqid='$id'";
-        $dat=mysqli_query($con,$qu);
         echo " REQUEST APPROVED";
-       
+    }
+    else{
+        echo "REJECTED";
     }
 ?>

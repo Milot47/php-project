@@ -10,9 +10,9 @@ body{
    
       
   
-  
-     
-
+b{
+  font-size:30px;
+}
 
 
 
@@ -113,10 +113,10 @@ li select {
   background-color:#333;
   color:white;
   float:right;
-  border:1px solid black;   
+  border:1px solid #333;   
   cursor:pointer;
   font-family:"Comic Sans MS", cursive, sans-serif;
-  -webkit-appearance: none;
+ 
 }
 
 
@@ -125,7 +125,7 @@ li select {
 
 
 a{
-    border:10px;   
+    border:10px ;   
     background:none;
     display:block;
     margin:8px auto;
@@ -135,6 +135,21 @@ a{
     width:100%;
     outline:none;
     color:black;
+     
+   
+
+}
+p a{background:none;
+     
+    text-align:center;
+    font-size:26px;
+    color:white;
+    border:2px solid #333;
+    padding:10px 10px;
+    width:50%;
+    outline:none;
+    background-color:#333;
+    border-radius:4px;
     
 }
 

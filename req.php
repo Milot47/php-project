@@ -6,6 +6,7 @@ $con=new mysqli("localhost","root","","miniproject") or die("couldnt connect to 
 $help=$_POST["help"];
 $Bank=$_POST["Bno"];
 $amt=$_POST["amt"];
+$details=$_POST["desc"];
 $category=$_POST["category"];
 $query="select * from tb_req ";
 $data=mysqli_query($con,$query);
@@ -47,7 +48,7 @@ if ($uploadOk == 0) {
 
 
 
-$sql = "INSERT INTO tb_req (email,topic,amnt,category,bno,img) VALUES('$email','$help','$amt','$category','$Bank','$new_name' )";
+$sql = "INSERT INTO tb_req (email,topic,amnt,category,bno,details,img) VALUES('$email','$help','$amt','$category','$Bank','$details','$new_name' )";
 if($sql){
     $s=1;
 }
@@ -58,7 +59,7 @@ if ( false===$result ) {
 
 if($result&&$files)
 {
-    echo "<script> alert('data entered successfully')</script>";
+    //echo "<script> alert('data entered successfully')</script>";
     echo "<script>location.href='Userhome.php'</script>";
 }
  else

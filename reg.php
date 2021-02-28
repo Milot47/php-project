@@ -13,13 +13,13 @@ if (mysqli_connect_errno()) {
 $sql = "INSERT INTO tb_admin(username,email,phone,password) VALUES('$name','$email',$phone,'$password' )";
 
 $result = mysqli_query($con, $sql);
-/*if ( false===$result ) {
+if ( false===$result ) {
     printf("error: %s\n", mysqli_error($con));
-  }*/
+  }
 
 if($result)
 {
-    echo "<script> alert('data entered successfully')</script>";
+   // echo "<script> alert('data entered successfully')</script>";
     echo "<script>location.href='login.html'</script>";
 }
  else

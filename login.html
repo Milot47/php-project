@@ -2,41 +2,18 @@
 <html>
 <head>
 <title>LOGIN</title>
-<link rel="stylesheet" href="login123.css" type="text/css">
-</head><style>
-body {
-  background-image: linear-gradient(grey,black);
-}
-</style>
+<link rel="stylesheet" href="login12.css" type="text/css">
+</head>
 <body>
 
 
-<script> function VALIDATION() 
-  {
-    var email = document.forms["reg"]["mail"];
-    var password = document.getElementById('pswd').value;
-      if(email.value.indexOf("@",0)<0)
-    {
-      window.alert("Please enter a valid email address.");
-      email.focus();
-      return false;
-    } 
-    if(email.value.indexOf(".",0)<0)
-    {
-      window.alert("Please enter a valid email address.");
-      email.focus();
-      return false;
-    }
-     
-      return true;
-  } </script>
 
 
 
-<form class="login-box" method="POST" action="login.php" name="log" onsubmit="return VALIDATION()" >
+<form class="login-box" method="POST" action="login.php" name="log"   >
   <h1>Login</h1>
-  <input type="text" name="name" placeholder="Username/Email"  value="" id="name"><br>
-  <input type="password" name="pswd" placeholder="Password" value="" id="pswd">
+  <input type="text" name="name" placeholder="Username/Email"  value="" id="name" required ><br>
+  <input type="password" name="pswd" placeholder="Password" value="" id="pswd"  required >
   <input type="submit" name="enter" value="Sign In">
   <h6> Don't have an account? 
   <a href ="reg.html">Sign up</a></h6>

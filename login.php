@@ -5,13 +5,13 @@ $email=$_POST['name'];
 $password=$_POST['pswd'];
 $_SESSION['email']=$email;
 
-    $query="select * from tb_admin where email='$email' or username='$email' and password='$password'";
+    $query="select * from tb_admin where binary email='$email' or username='$email' and password='$password'";
     //echo $email;
     $data=mysqli_query($con,$query);
     if(mysqli_num_rows($data))
     {
       $row = mysqli_fetch_assoc($data);
-      if(($email=='admin')||($username=='admin'))
+      if(($email==="admin")||($username==="admin"))
       { 
         $query="select * from tb_admin where email='admin'"; 
         if($row['password']==$password) {

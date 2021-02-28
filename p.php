@@ -5,29 +5,7 @@
     <link rel="stylesheet" href="page.css" type="text/css">
     
     </head>
-   <style>
-    #myProgress {
-    align:center;
-    width:50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  
-    background-color: grey;
-  }
-
-  #myBar {
-    text-align:center;
-    height: 30px;
-    background-color:skyblue;
-    text-align: center;
-    line-height: 30px;
-    color: white;
-    
-  }
-
-  </style>
-
+   
 
     
 <?php
@@ -45,9 +23,7 @@ if(isset($_GET['id']))
     {
       while($row = mysqli_fetch_assoc($data))
      {
-      $per=round((( $row['payments']/$row['amnt'])*100),0);
-      if($per<100)
-      {
+     
         
     
 ?>
@@ -57,8 +33,8 @@ if(isset($_GET['id']))
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
-                </div></li>
-            <li> <?php echo "WELCOME  " .$email;?></li>
+                </div></li><li> <b><?php echo "PROJECT SEVA"?></b></li>
+            <li> <?php echo $email;?></li>
         </ul>
         
         <div id="myNav" class="overlay" >
@@ -74,39 +50,33 @@ if(isset($_GET['id']))
    
        
      
-    TOPIC   :</td>     <td> <?php echo $row['topic'];?><br>
-    CATEGORY: </td>  <td><?php echo $row['category'];?><br>
-    AMOUNT  :</td>   <td> <?php echo $row['amnt'];?><br>
+    TOPIC   :<?php echo $row['topic'];?><br>
+    CATEGORY: <?php echo $row['category'];?><br>
+    DESCRIPTION : <?php echo $row['details']; ?><br>
+    AMOUNT  : <?php echo $row['amnt'];?><br>
+    <h5>UPI ID  : <?php echo $row['bno'];?><br></h5>
+
   <span style="cursor:pointer" onclick="openImg()">View Certificate</span></form><br>
-  <form class="f"action="payment.php" method="post">
-  <input type="tel" name="pay" placeholder="Enter amount " id="pay"></td>   <td> <input type="submit" class="btn" value="PAY">
- <form>
- 
+  
   <div id="myImg" class="overlay">
     <a href="javascript:void(0)" class="closebtn" onclick="closeImg()">&times;</a>
       <div class="overlay-content">
         <img  src="<?php echo $row['img'];?>" ><br></div>
   </div>
 
-    <div id="myProgress">
-  <div id="myBar"style="width:<?php echo $per ."%" ; ?>"><?php echo $per ."% completed"; ?></div>
-</div>
-
-
+    
         
   </body>
 </html>     
 <?php
-      }else{$qu=" update tb_req set approval='DONE' where reqid='$id '";
-        if($dat=mysqli_query($con,$qu))
-        {echo "Overflow";}
-      }
+      
+      
     }
    }
 }
 else {
   echo "failed";
-} //<button class="btn" type="submit"  id="Pay">Pay</button></td></tr>
+}
 mysqli_close($con);
 ?>
 
@@ -120,8 +90,8 @@ function closeImg() {
 }
 function openNav() {
   document.getElementById("myNav").style.width = "20%";
-  //x.classList.toggle("change");
-}
+ 
+  }
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
   
